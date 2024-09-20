@@ -1,48 +1,23 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class PembelianDemo {
     public static void main(String[] args) {
-        Product product1 = new Product();
-        product1.setIdProduct(1);
-        product1.setNamaProduct("Laptop");
-        product1.setHarga(1000000);
-        product1.setStock(10);
+        Product product1 = new Product(1, "Laptop", 1000000, 10);
+        Product product2 = new Product(2, "Smartphone", 500000, 20);
+        Product product3 = new Product(3, "Tablet", 800000, 15);
 
-        Product product2 = new Product();
-        product2.setIdProduct(2);
-        product2.setNamaProduct("Smartphone");
-        product2.setHarga(500000);
-        product2.setStock(20);
+        Customer customer1 = new Customer(1, "Tissaaa", "Jalan Raya", "tissaa.lol@example.com");
+        Customer customer2 = new Customer(2, "Alyssa Tifara", "Jalan Raya", "alyssa.tifara@example.com");
 
-        Customer customer1 = new Customer();
-        customer1.setIdCustomer(1);
-        customer1.setNamaCustomer("Tissaaa");
-        customer1.setAlamat("Jalan Raya");
-        customer1.setEmail("tissaa.lol@example.com");
-
-        Customer customer2 = new Customer();
-        customer2.setIdCustomer(2);
-        customer2.setNamaCustomer("Alyssa Tifara");
-        customer2.setAlamat("Jalan Raya");
-        customer2.setEmail("alyssa.tifara@example.com");
-
-        Order order1 = new Order();
-        order1.setIdOrder(1234);
-        order1.setIdCustomer(customer1.getIdCustomer());
-        order1.setTanggalOrder(LocalDate.of(2021, 8, 11));
-        order1.setCustomer(customer1);
-
-        Order order2 = new Order();
-        order2.setIdOrder(24567);
-        order2.setIdCustomer(customer2.getIdCustomer());
-        order2.setTanggalOrder(LocalDate.of(2023, 2, 8));
-        order2.setCustomer(customer2); 
+        Order order1 = new Order(1234, customer1.getIdCustomer(), LocalDate.of(2021, 8, 11), customer1);
+        Order order2 = new Order(24567, customer2.getIdCustomer(), LocalDate.of(2023, 2, 8), customer2);
 
         order1.tambahProduct(product1);
         order1.tambahProduct(product2);
 
-        order2.tambahProduct(product1);
         order2.tambahProduct(product2);
+        order2.tambahProduct(product3);
 
         customer1.addOrder(order1);
         customer2.addOrder(order2);
@@ -52,6 +27,9 @@ public class PembelianDemo {
         System.out.println("==============================");
         for (Order o : customer1.getOrders()) {
             System.out.println(o.getInfo());
+            // for (Product p : o.getProducts()) {
+            //     System.out.println(p.getInfo());
+            // }
         }
 
         System.out.println("==============================");
@@ -59,18 +37,9 @@ public class PembelianDemo {
         System.out.println("==============================");
         for (Order o : customer2.getOrders()) {
             System.out.println(o.getInfo());
+            // for (Product p : o.getProducts()) {
+            //     System.out.println(p.getInfo());
+            // }
         }
-        
-        // for (Order o : customer1.getOrders()) {
-        //     System.out.println("==============================");
-        //     System.out.println("Order ID: " + o.getIdOrder());
-        //     System.out.println("Customer ID: " + o.getIdCustomer());
-        //     System.out.println("Tanggal Order: " + o.getTanggalOrder());
-        //     System.out.println("Total Harga: " + o.getTotalHarga());
-        //     System.out.println("Products:");
-        //     for (Product p : o.getProducts()) {
-        //         System.out.println(p.getInfo());
-        //     }
-        // }
     }
 }

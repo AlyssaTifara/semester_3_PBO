@@ -1,14 +1,22 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Customer {
+class Customer {
     private int idCustomer;
     private String namaCustomer;
     private String alamat;
     private String email;
-    private ArrayList<Order> orders; 
+    private ArrayList<Order> orders;
 
     public Customer() {
+        this.orders = new ArrayList<>();
+    }
+
+    public Customer(int idCustomer, String namaCustomer, String alamat, String email) {
+        this.idCustomer = idCustomer;
+        this.namaCustomer = namaCustomer;
+        this.alamat = alamat;
+        this.email = email;
         this.orders = new ArrayList<>();
     }
 
@@ -48,11 +56,9 @@ public class Customer {
         return orders;
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
-    }
-
     public void addOrder(Order order) {
         this.orders.add(order);
     }
+
+    
 }

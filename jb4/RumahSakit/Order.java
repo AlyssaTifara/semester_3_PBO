@@ -1,36 +1,59 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Order {
+class Order {
     private int idOrder;
     private int idCustomer;
     private LocalDate tanggalOrder;
-    private ArrayList<Product> products; 
     private Customer customer;
+    private ArrayList<Product> products;
 
     public Order() {
-        this.products = new ArrayList<>(); 
+        this.products = new ArrayList<>();
     }
-    public ArrayList<Product> getProducts() {
-        return products;
+
+    public Order(int idOrder, int idCustomer, LocalDate tanggalOrder, Customer customer) {
+        this.idOrder = idOrder;
+        this.idCustomer = idCustomer;
+        this.tanggalOrder = tanggalOrder;
+        this.customer = customer;
+        this.products = new ArrayList<>();
     }
+
     public int getIdOrder() {
         return idOrder;
     }
+
     public void setIdOrder(int idOrder) {
         this.idOrder = idOrder;
     }
+
     public int getIdCustomer() {
         return idCustomer;
     }
+
     public void setIdCustomer(int idCustomer) {
         this.idCustomer = idCustomer;
     }
+
     public LocalDate getTanggalOrder() {
         return tanggalOrder;
     }
+
     public void setTanggalOrder(LocalDate tanggalOrder) {
         this.tanggalOrder = tanggalOrder;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
     public void tambahProduct(Product product) {
@@ -47,10 +70,6 @@ public class Order {
 
     public int getTotalHarga() {
         return hitungTotalHarga(); 
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public String getInfo(){
