@@ -6,6 +6,7 @@ public class PembelianDemo {
         Product product1 = new Product(1, "Laptop", 1000000, 10);
         Product product2 = new Product(2, "Smartphone", 500000, 20);
         Product product3 = new Product(3, "Tablet", 800000, 15);
+        Product product4 = new Product(4, "", 800000, 15);
 
         Customer customer1 = new Customer(1, "Tissaaa", "Jalan Raya", "tissaa.lol@example.com");
         Customer customer2 = new Customer(2, "Alyssa Tifara", "Jalan Raya", "alyssa.tifara@example.com");
@@ -27,9 +28,6 @@ public class PembelianDemo {
         System.out.println("==============================");
         for (Order o : customer1.getOrders()) {
             System.out.println(o.getInfo());
-            // for (Product p : o.getProducts()) {
-            //     System.out.println(p.getInfo());
-            // }
         }
 
         System.out.println("==============================");
@@ -37,9 +35,6 @@ public class PembelianDemo {
         System.out.println("==============================");
         for (Order o : customer2.getOrders()) {
             System.out.println(o.getInfo());
-            // for (Product p : o.getProducts()) {
-            //     System.out.println(p.getInfo());
-            // }
         }
     }
 }
