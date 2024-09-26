@@ -3,10 +3,10 @@ import java.util.ArrayList;
 
 public class PembelianDemo {
     public static void main(String[] args) {
-        Product product1 = new Product(1, "Laptop", 1000000, 10);
-        Product product2 = new Product(2, "Smartphone", 500000, 20);
-        Product product3 = new Product(3, "Tablet", 800000, 15);
-        Product product4 = new Product(4, "", 800000, 15);
+        Product product1 = new Product(1, "Laptop", 6_000_000, 10);
+        Product product2 = new Product(2, "Smartphone", 1_500_000, 20);
+        Product product3 = new Product(3, "Tablet", 5_000_000, 15);
+        Product product4 = new Product(4, "Nitendo", 1_500_000, 15);
 
         Customer customer1 = new Customer(1, "Tissaaa", "Jalan Raya", "tissaa.lol@example.com");
         Customer customer2 = new Customer(2, "Alyssa Tifara", "Jalan Raya", "alyssa.tifara@example.com");
@@ -17,7 +17,7 @@ public class PembelianDemo {
         order1.tambahProduct(product1);
         order1.tambahProduct(product2);
 
-        order2.tambahProduct(product2);
+        order2.tambahProduct(product4);
         order2.tambahProduct(product3);
 
         customer1.addOrder(order1);

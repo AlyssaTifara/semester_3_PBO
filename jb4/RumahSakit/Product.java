@@ -49,6 +49,7 @@ class Product {
         String info = " ";
         info += "\n-----------------------";
         info += "\n ID Product  : " + idProduct;
+        info += "\n Nama Barang : " + namaProduct;
         info += "\n Harga       : " + harga;
         info += "\n Stock       : " + stock;
         info += "\n-----------------------";
