@@ -8,8 +8,8 @@ public class PembelianDemo {
         Product product3 = new Product(3, "Tablet", 5_000_000, 15);
         Product product4 = new Product(4, "Nitendo", 1_500_000, 15);
 
-        Customer customer1 = new Customer(1, "Tissaaa", "Jalan Raya", "tissaa.lol@example.com");
-        Customer customer2 = new Customer(2, "Alyssa Tifara", "Jalan Raya", "alyssa.tifara@example.com");
+        Customer customer1 = new Customer(1, "Tissaaa", "Jalan Danau Tondano no. 35", "tissaa.lol@example.com");
+        Customer customer2 = new Customer(2, "Alyssa Tifara", "Jalan Bandung no. 17", "alyssa.tifara@example.com");
 
         Order order1 = new Order(1234, customer1.getIdCustomer(), LocalDate.of(2021, 8, 11), customer1);
         Order order2 = new Order(24567, customer2.getIdCustomer(), LocalDate.of(2023, 2, 8), customer2);
